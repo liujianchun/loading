@@ -1,0 +1,89 @@
+.circle_process {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f4f4f4;
+}
+
+.circle_loading {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+.circle_loading .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100px;
+  height: 100px;
+}
+
+.circle_process .error {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: white;
+  line-height: 80px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.circle_process .inner {
+  width: 80%;
+  height: 80%;
+  background: white;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  font-family: 'Nunito-Bold', Verdana;
+  font-size: 30px;
+  color: #FF5454;
+}
+
+.circle_process .wrapper {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.circle_process .right {
+  right: 0;
+}
+
+.circle_process .left {
+  left: 0;
+}
+
+.circle_process .circle {
+  width: 200%;
+  height: 100%;
+  background-color: #FF5454;
+  transform-origin: 0 50%;
+  transform: rotate(-180deg);
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s linear;
+  -webkit-transform-origin: 0 50%;
+  -webkit-transform: rotate(-180deg);
+}
+
+.circle_process .leftcircle {
+  transform-origin: 100% 50%;
+  margin-left: -100%;
+}

@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>loading</title>
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <link href="css/loading.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="circle_loading">
+  <div class="circle_process">
+    <div class="wrapper right">
+      <div class="circle rightcircle"></div>
+    </div>
+    <div class="wrapper left">
+      <div class="circle leftcircle"></div>
+    </div>
+    <div class="inner">1</div>
+    <img class="cover" src="img/loading-cover.png"/>
+  </div>
+</div>
+<script>
+  $(function() {
+    let interval = null;
+    let loadingPercentage = 0;
+    interval = setInterval(function () {
+      if (loadingPercentage >= 1) {
+        clearInterval(interval);
+      }
+      loadingPercentage += 0.1;
+      setPercentage(loadingPercentage);
+    }, 1000);
+
+    function setPercentage (percentage) {
+      if (percentage > 1) percentage = 1;
+      if (percentage < 0.5) {
+        $('.leftcircle').css('transform', 'rotate(-180deg)');
+        $('.rightcircle').css('transform', 'rotate(' + (180 * (percentage * 2 - 1)) + 'deg)');
+      } else {
+        $('.leftcircle').css('transform', 'rotate(' + (180 * (percentage * 2 - 2)) + 'deg)');
+        $('.rightcircle').css('transform', 'rotate(0deg)');
+      }
+    }
+  })
+</script>
+</body>
+</html>
